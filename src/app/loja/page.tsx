@@ -10,6 +10,20 @@ export default function LojaPage() {
     router.push('/');
   };
 
+  const secretBrainrots = [
+    { id: 1, title: "⚫BRAINROT SECRETO DE 1M/S💸 A 2M/S💸⚫", price: "R$ 15,00", originalPrice: "R$ 16,50", image: "https://cdn.centralcart.com.br/stores/9331/packages/a475f3dd-f9de-4e68-9176-78a64e56e7e4.png" },
+    { id: 2, title: "⚫BRAINROT SECRETO DE 2M/S💸 A 5M/S💸⚫", price: "R$ 25,00", originalPrice: "R$ 27,50", image: "https://cdn.centralcart.com.br/stores/9331/packages/9a409aa9-9ab6-4007-9d0a-34e7cdd8184a.png" },
+    { id: 3, title: "⚫BRAINROT SECRETO DE 5M/S💸 A 10M/S💸⚫", price: "R$ 35,00", originalPrice: "R$ 38,50", image: "https://cdn.centralcart.com.br/stores/9331/packages/ba034fc0-2530-49e3-94a3-835dbcdc679d.png" },
+    { id: 4, title: "⚫BRAINROT SECRETO DE 10M/S💸 A 20M/S💸⚫", price: "R$ 49,90", originalPrice: "R$ 54,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/9c8cbd29-ae65-48c0-a6a2-4239add4261f.png" },
+    { id: 5, title: "⚫BRAINROT SECRETO DE 30M/S💸 A 60M/S💸⚫", price: "R$ 69,90", originalPrice: "R$ 76,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/379c8200-c023-44b1-ad63-9a705c42f30b.png" },
+    { id: 6, title: "⚫BRAINROT SECRETO DE 75M/S💸 A 100M/S💸⚫", price: "R$ 89,90", originalPrice: "R$ 98,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/6638779d-ff29-4648-babe-9de3825f5765.png" },
+    { id: 7, title: "⚫BRAINROT SECRETO DE 100M/S💸 A 150M/S💸⚫", price: "R$ 129,90", originalPrice: "R$ 142,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/b45a0bc4-8764-4317-8e2a-a03ef92e2dc9.png" },
+    { id: 8, title: "⚫BRAINROT SECRETO DE 150M/S💸 A 200M/S💸⚫", price: "R$ 179,90", originalPrice: "R$ 197,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/d5dbc573-5332-48ad-bef1-6708a543228d.png" },
+    { id: 9, title: "⚫BRAINROT SECRETO DE 250M/S💸 A 450M/S💸⚫", price: "R$ 279,90", originalPrice: "R$ 307,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/59cbad80-791b-4616-bd64-3b89922037fd.png" },
+    { id: 10, title: "⚫BRAINROT SECRETO DE 500M/S💸⚫", price: "R$ 499,90", originalPrice: "R$ 549,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/f1897c35-00de-4337-b208-09f6aaac818e.png" },
+    { id: 11, title: "⚫BRAINROT SECRETO DE 1B+/S💸⚫", price: "R$ 1.299,90", originalPrice: "R$ 1.429,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/51654594-83f6-45c4-aa71-ae7bbed3490f.png" }
+  ];
+
   const brainrots = [
     { id: 1, title: "🍝SPHAGETTI TUALETTI🍝 - 60M/S💸", price: "R$ 149,90", originalPrice: "R$ 164,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/e9f1f8ec-22c2-4571-a5b1-0a31db7cd455.png" },
     { id: 2, title: "🦈LOS BROS🏏 - 24M/S💸", price: "R$ 79,90", originalPrice: "R$ 87,89", image: "https://cdn.centralcart.com.br/stores/9331/packages/7ee015ad-c3e7-4f99-85d5-5de127539f6f.png" },
@@ -119,6 +133,48 @@ export default function LojaPage() {
                     src={brainrot.image}
                     alt={brainrot.title}
                     className={`w-full h-auto object-contain transition-transform duration-300 ${brainrot.outOfStock ? 'blur-sm opacity-60' : 'group-hover:scale-105'}`}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-4 p-2 sm:p-4 flex-1">
+                  <p className="text-sm sm:text-base font-semibold text-white leading-snug line-clamp-2">
+                    {brainrot.title}
+                  </p>
+
+                  <div className="flex justify-between items-center">
+                    <div className="text-xs sm:text-sm flex-1">
+                      <p className="text-white/50 line-through">{brainrot.originalPrice}</p>
+                      <p className="text-base sm:text-xl font-black text-orange-400">{brainrot.price}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-auto">
+                    <button className="w-full flex items-center justify-center gap-2 px-2 h-8 sm:h-10 text-xs whitespace-nowrap sm:text-base font-semibold rounded-xl bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 shadow-md transition-all">
+                      🛒 Comprar agora
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Secret Brainrot Section */}
+      <section className="py-8 bg-gray-800/50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-2xl font-bold inline-block relative after:content-[''] after:block after:mt-2 after:w-full after:h-1 after:bg-orange-500 after:rounded-full mb-4 sm:mb-8">
+            BRAINROT SECRET ALEATORIO
+          </h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {secretBrainrots.map((brainrot) => (
+              <div key={brainrot.id} className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-orange-500/20 transition-all duration-300 border border-gray-700 hover:scale-[1.01] flex flex-col">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={brainrot.image}
+                    alt={brainrot.title}
+                    className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
 
