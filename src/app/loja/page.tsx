@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowLeft, Star, Crown, Zap, Flame, Gem } from 'lucide-react';
+import { ArrowLeft, Crown, Zap, Flame, Gem } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function LojaPage() {
@@ -13,75 +13,31 @@ export default function LojaPage() {
   const brainrots = [
     {
       id: 1,
-      title: "Pack Sigma Ultimate",
-      description: "Os brainrots mais engraçados para dominar qualquer servidor",
-      price: "R$ 29,90",
-      originalPrice: "R$ 49,90",
-      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&h=200&fit=crop",
-      badge: "MAIS VENDIDO",
-      badgeColor: "bg-red-500",
-      rating: 4.9,
-      sales: 1247
+      title: "🍝 SPHAGETTI TUALETTI💧 - 60M/S🏃‍♂️...",
+      price: "R$ 149,90",
+      originalPrice: "R$ 164,00",
+      image: "https://lbblox.com.br/cdn/shop/files/Item6.png?v=1735334906&width=533",
     },
     {
       id: 2,
-      title: "Brainrot VIP Premium",
-      description: "Exclusivo para quem quer ser o rei da diversão",
-      price: "R$ 19,90",
-      originalPrice: "R$ 39,90",
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=300&h=200&fit=crop",
-      badge: "NOVO",
-      badgeColor: "bg-green-500",
-      rating: 4.8,
-      sales: 892
+      title: "🥶 LOS BROS🗿 - 24M/S🏃",
+      price: "R$ 79,90",
+      originalPrice: "R$ 87,89",
+      image: "https://lbblox.com.br/cdn/shop/files/Item4.png?v=1735334892&width=533",
     },
     {
       id: 3,
-      title: "Mega Pack Brainrot",
-      description: "Combo completo com mais de 50 brainrots diferentes",
-      price: "R$ 39,90",
-      originalPrice: "R$ 79,90",
-      image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=300&h=200&fit=crop",
-      badge: "OFERTA",
-      badgeColor: "bg-orange-500",
-      rating: 4.9,
-      sales: 2156
+      title: "🌮 👶TACORITA BICICLETA👶 🌮 -...",
+      price: "R$ 69,90",
+      originalPrice: "R$ 76,89",
+      image: "https://lbblox.com.br/cdn/shop/files/Item5.png?v=1735334899&width=533",
     },
     {
       id: 4,
-      title: "Brainrot Starter",
-      description: "Perfeito para quem está começando e quer arrasar",
-      price: "R$ 14,90",
-      originalPrice: "R$ 24,90",
-      image: "https://images.unsplash.com/photo-1556438064-2d7646166914?w=300&h=200&fit=crop",
-      badge: "INICIANTE",
-      badgeColor: "bg-blue-500",
-      rating: 4.7,
-      sales: 634
-    },
-    {
-      id: 5,
-      title: "Pack Lendário",
-      description: "Os brainrots mais raros e engraçados do jogo",
+      title: "🔥LOS COMBINASIONAS🔥 - 15M/S🏃",
       price: "R$ 49,90",
-      originalPrice: "R$ 89,90",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=200&fit=crop",
-      badge: "LENDÁRIO",
-      badgeColor: "bg-purple-500",
-      rating: 5.0,
-      sales: 445
-    },
-    {
-      id: 6,
-      title: "Brainrot Supremo",
-      description: "Para quem quer ser o mais divertido de todos",
-      price: "R$ 34,90",
-      originalPrice: "R$ 59,90",
-      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&h=200&fit=crop",
-      badge: "SUPREMO",
-      badgeColor: "bg-yellow-500",
-      rating: 4.8,
-      sales: 778
+      originalPrice: "R$ 54,89",
+      image: "https://lbblox.com.br/cdn/shop/files/Item3.png?v=1735334886&width=533",
     }
   ];
 
@@ -139,46 +95,26 @@ export default function LojaPage() {
           <div className="grid grid-cols-2 gap-3 md:gap-4">
             {brainrots.map((brainrot) => (
               <div key={brainrot.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-orange-500/20 transition-all duration-300 border border-gray-700 hover:scale-[1.02]">
-                {/* Image with Badge */}
                 <div className="relative">
-                  <img 
-                    src={brainrot.image} 
+                  <img
+                    src={brainrot.image}
                     alt={brainrot.title}
-                    className="w-full h-24 md:h-32 object-cover"
+                    className="w-full h-32 md:h-40 object-contain bg-yellow-500"
                   />
-                  <div className={`absolute top-1 left-1 ${brainrot.badgeColor} text-white px-1.5 py-0.5 rounded-full text-xs font-bold`}>
-                    {brainrot.badge}
-                  </div>
                 </div>
 
-                {/* Content - Mais compacto */}
                 <div className="p-3">
-                  <h3 className="text-sm font-bold mb-1 text-white leading-tight line-clamp-1">{brainrot.title}</h3>
-                  <p className="text-gray-400 mb-2 text-xs leading-tight line-clamp-2">{brainrot.description}</p>
-                  
-                  {/* Rating and Sales - Mais compacto */}
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-3 h-3 text-yellow-400 fill-current" />
-                      <span className="text-xs font-semibold">{brainrot.rating}</span>
-                    </div>
-                    <span className="text-xs text-gray-500">{brainrot.sales} pessoas compraram</span>
-                  </div>
+                  <h3 className="text-sm font-bold mb-2 text-white leading-tight line-clamp-2 min-h-[2.5rem]">{brainrot.title}</h3>
 
-                  {/* Price - Layout melhorado */}
                   <div className="mb-3">
-                    <div className="flex items-baseline justify-between">
+                    <div className="flex items-baseline justify-between mb-1">
                       <span className="text-base md:text-lg font-bold text-orange-400">{brainrot.price}</span>
-                      <div className="text-green-400 text-xs font-semibold">
-                        {Math.round(((parseFloat(brainrot.originalPrice.replace('R$ ', '').replace(',', '.')) - parseFloat(brainrot.price.replace('R$ ', '').replace(',', '.'))) / parseFloat(brainrot.originalPrice.replace('R$ ', '').replace(',', '.'))) * 100)}% OFF
-                      </div>
                     </div>
                     <span className="text-xs text-gray-500 line-through">{brainrot.originalPrice}</span>
                   </div>
 
-                  {/* Buy Button - Mais compacto */}
                   <button className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-2 px-2 rounded-lg text-xs transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    🚀 QUERO ESSE
+                    🛒 Comprar agora
                   </button>
                 </div>
               </div>
